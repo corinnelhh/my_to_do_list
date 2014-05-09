@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> My To-Do List </title>
+	</head>	
+
+	
+<h1> My To-Do List </h>
+	<p></p>
+	<p>
+<body>
+
+<h3></h3>
+    <form name="form">
+      <label for="item">New Task:</label>
+      <input type="text" id="item" name="itemEntered" />
+      <input type="button"  value="Add task to to-do list" onclick="javascript:add();" />
+    </form>
+	
+    <ul id="my_list">
+    </ul>
+	
+    <form>
+      <input type="button" value="I've done this" onclick="javascript:rem();" />
+    </form>
+
+<script type="text/javascript">
+function add() {
+    var item = [];
+    item = document.getElementById('my_list');
+    item.innerHTML += "<li><input type='checkbox'>" + document.form.itemEntered.value + "</li>";
+}
+
+function rem() {
+    var my_list = document.getElementById('my_list'),
+        items = Array.prototype.slice.call(my_list.childNodes),
+        item;
+    while (item = items.pop()) {
+        if (item.firstChild && item.firstChild.checked) {
+            my_list.removeChild(item);
+        }
+    }
+}
+</script>
+</body>
+</p>
+
+</html>
